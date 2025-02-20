@@ -83,7 +83,6 @@ p {
 #resgatar:hover {
     background: #218838;
 }
-
 .oculto {
-    display: none;
+    display: none !important; /* Garante que o pop-up esteja invisível no início */
 }

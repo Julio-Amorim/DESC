@@ -1,40 +1,57 @@
+/* Reset básico */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
+/* Fundo da página */
 body {
-    background: #6d0ec6;
-    color: white;
-    text-align: center;
+    background-color: black;
+    background: url('./img/fundo-desk.png') no-repeat center center;
+    background-size: cover;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    text-align: center;
 }
 
+/* Container principal */
 .container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
 }
 
+/* Imagem do presente */
 #presente {
     width: 150px;
     cursor: pointer;
+    animation: flutuar 2s infinite ease-in-out;
     transition: transform 0.2s;
 }
 
+/* Animação de clique no presente */
 #presente:active {
     transform: scale(0.9);
 }
 
+/* Animação de flutuação */
+@keyframes flutuar {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+/* Texto */
 p {
     margin-top: 10px;
     font-size: 18px;
+    color: #fff;
 }
 
 /* Estilo do pop-up */
@@ -50,9 +67,10 @@ p {
     align-items: center;
 }
 
+/* Conteúdo do pop-up */
 #popup-content {
-    background: white;
-    color: black;
+    background: #fff;
+    color: #000;
     padding: 20px;
     border-radius: 10px;
     text-align: center;
@@ -60,9 +78,15 @@ p {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
+#popup-content p{
+    margin: 10px 0;
+    color: #000028;
+}
+
+/* Cupom destacado */
 #cupom {
-    background: #ffcc00;
-    color: #000;
+    background: #ED1C29;
+    color: #fff;
     padding: 10px;
     font-size: 20px;
     font-weight: bold;
@@ -70,8 +94,9 @@ p {
     border-radius: 5px;
 }
 
+/* Botão resgatar */
 #resgatar {
-    background: #28a745;
+    background: #232C81;
     color: white;
     padding: 10px;
     border: none;
@@ -81,8 +106,18 @@ p {
 }
 
 #resgatar:hover {
-    background: #218838;
+    background: #000028;
 }
+
+/* Esconde o pop-up inicialmente */
 .oculto {
-    display: none !important; /* Garante que o pop-up esteja invisível no início */
+    display: none !important;
+}
+
+@media screen and (max-width: 500px) {
+    body {
+        background: url('./img/fundo-moba.png') no-repeat center center;
+        background-size: cover;
+        background-attachment: fixed;
+    }
 }

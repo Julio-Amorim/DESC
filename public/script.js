@@ -7,12 +7,43 @@ let cliques = 0;
 // Garante que o pop-up esteja oculto no carregamento
 popup.classList.add("oculto");
 
+// Função para mostrar o pop-up
+function mostrarPopup() {
+    popup.classList.remove("oculto");
+    dispararConfetes(); // Dispara confetes ao mostrar o pop-up
+    document.addEventListener("click", fecharPopupFora); // Fecha o pop-up ao clicar fora
+}
+
+// Função para fechar o pop-up ao clicar fora dele
+function fecharPopupFora(event) {
+    if (!popup.contains(event.target) && event.target !== presente) {
+        popup.classList.add("oculto");
+        document.removeEventListener("click", fecharPopupFora); // Remove o listener
+    }
+}
+
+// Função para disparar confetes
+function dispararConfetes() {
+    confetti({
+        particleCount: 100, // Quantidade de confetes
+        spread: 70, // Quão espalhados os confetes estarão
+        origin: { y: 0.6 }, // Origem dos confetes (0.6 = um pouco acima do centro)
+    });
+}
+
+// Contador de cliques no presente
 presente.addEventListener("click", () => {
     cliques++;
 
+    // Adiciona uma animação ao clicar
+    presente.style.transform = "translateY(5px) scale(0.95)";
+    setTimeout(() => {
+        presente.style.transform = "translateY(0) scale(1)";
+    }, 200); // Retorna à posição original após 200ms
+
     if (cliques === 3) {
-        popup.classList.remove("oculto"); // Mostra o pop-up
-        cliques = 0; // Reseta os cliques para evitar cliques extras
+        mostrarPopup(); // Mostra o pop-up após 3 cliques
+        cliques = 0; // Reseta os cliques
     }
 });
 

@@ -49,7 +49,7 @@ presente.addEventListener("click", () => {
 
 // Redirecionamento para o WhatsApp ao clicar no botão "Resgatar"
 resgatar.addEventListener("click", () => {
-    window.location.href = "https://wa.me/5599991916672?text=Olá!%20Quero%20resgatar%20meu%20cupom%20de%2025%%20de%20desconto!";
+    window.location.href = "https://wa.me/5599991916672?text=Olá!%20Quero%20resgatar%20meu%20cupom%20de%2020%25%20de%20desconto!";
 });
 
 // Ajuste de tamanho para a versão mobile

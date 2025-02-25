@@ -47,11 +47,23 @@ body {
     100% { transform: translateY(0); }
 }
 
-/* Texto */
-p {
-    margin-top: 10px;
+/* Estilo do card */
+.card {
+    background-color: #232c8144; /* Nova cor de fundo */
+    padding: 20px;
+    border-radius: 10px; /* Bordas arredondadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para efeito de card */
+    text-align: center; /* Centraliza o texto */
+    margin-top: 20px; /* Espaçamento acima do card */
+    max-width: 300px; /* Largura máxima do card */
+    width: 100%; /* Faz o card ocupar 100% da largura disponível */
+}
+
+/* Estilo do texto dentro do card */
+.card p {
     font-size: 18px;
-    color: #fff;
+    color: #fff; /* Cor do texto alterada para branco para melhor contraste */
+    margin: 0; /* Remove margens padrão do parágrafo */
 }
 
 /* Estilo do pop-up */
@@ -122,12 +134,19 @@ p {
 
 @media screen and (max-width: 500px) {
     body {
-        background: url('./img/fundo-moba.png') no-repeat center center;
         background-size: cover;
         background-attachment: fixed;
     }
 
     #presente {
-        width: 100px;
+        width: 100px; /* Reduz o tamanho do presente para telas menores */
+    }
+
+    .card {
+        max-width: 80%; /* Ajusta a largura do card para telas menores */
+    }
+
+    #popup-content {
+        width: 80%; /* Ajusta a largura do pop-up para telas menores */
     }
 }

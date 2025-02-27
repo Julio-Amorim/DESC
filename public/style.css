@@ -33,6 +33,7 @@ body {
     cursor: pointer;
     animation: flutuar 2s infinite ease-in-out;
     transition: transform 0.2s ease;
+    touch-action: manipulation; /* Evita o zoom ao tocar */
 }
 
 /* Animação de clique no presente */
